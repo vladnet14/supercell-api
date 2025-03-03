@@ -22,32 +22,35 @@
   The library's syntax is designed to be as understandable as possible. For example:
 
     ```javascript
-    import SupercellAPI from '@vladnet14/supercell-api';
+    import SupercellClient from '@vladnet14/supercell-api';
 
+    const TOKEN = 'your-token';
+    
     async function main() {
-      const api = new SupercellAPI('your-token');
-
+      const api = new SupercellClient({ token: TOKEN, apiType: 'clashofclans', useProxy: true });
+    
       try {
         // Get player
-        const player = await api.getPlayer('P0G0R2L9');
+        const player = await api.endpoints.getPlayer('Y90PCRLGC');
         console.log(`Player: ${player.name}, Level: ${player.expLevel}`);
-
+    
         // Get clan
-        const clan = await api.getClan('9P2PQULR');
+        const clan = await api.endpoints.getClan('2J2GQPRCV');
         console.log(`Clan: ${clan.name}, Level: ${clan.clanLevel}`);
-  
+    
         // Search clan
-        const clans = await api.searchClans({ name: 'Elite', minMembers: 30 });
+        const clans = await api.endpoints.searchClans({ name: 'CRUVO' });
         console.log('Found clans:', clans.items?.map((c) => c.name));
-  
-        // Locations
-        const locations = await api.getLocations(5);
+    
+        // Get locations
+        const locations = await api.endpoints.getLocations();
         console.log('Locations:', locations.items?.map((l) => l.name));
       } catch (error) {
-          console.error(error.message);
+        console.error(error);
       }
+      
     }
-
+    
     main();
     ```
 
