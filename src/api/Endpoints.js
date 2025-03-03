@@ -53,12 +53,9 @@ class Endpoints {
    * @returns {Promise<any>} Clan search results
    */
   async searchClans(params = {}) {
-    const { name = '', minMembers = 1, maxMembers = 50, minLevel = 1, limit = 10 } = params;
+    const { name = '', limit = 10 } = params;
     const searchParams = new URLSearchParams({
       name,
-      minMembers: minMembers.toString(),
-      maxMembers: maxMembers.toString(),
-      minLevel: minLevel.toString(),
       limit: limit.toString(),
     }).toString();
     return this.fetcher.fetchData(`/clans?${searchParams}`);
