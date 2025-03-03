@@ -12,12 +12,6 @@
 - **Asynchronous Requests** ⏳  
   The library supports asynchronous operations, allowing for efficient data loading and improved responsiveness of your applications.
 
-- **Data Caching** ⚡  
-  Built-in caching mechanisms help reduce the number of API requests and speed up data retrieval.
-
-- **Support for All Gaming Platforms** 🎮  
-  Works with all Supercell gaming platforms, including mobile devices and PC.
-
 - **Intuitive Methods** 🛠️  
   The library's syntax is designed to be as understandable as possible. For example:
 
@@ -25,32 +19,32 @@
     import SupercellClient from '@vladnet14/supercell-api';
 
     const TOKEN = 'your-token';
-    
+
     async function main() {
       const api = new SupercellClient({ token: TOKEN, apiType: 'clashofclans', useProxy: true });
-    
+
       try {
         // Get player
         const player = await api.endpoints.getPlayer('Y90PCRLGC');
         console.log(`Player: ${player.name}, Level: ${player.expLevel}`);
-    
+
         // Get clan
         const clan = await api.endpoints.getClan('2J2GQPRCV');
         console.log(`Clan: ${clan.name}, Level: ${clan.clanLevel}`);
-    
+
         // Search clan
         const clans = await api.endpoints.searchClans({ name: 'CRUVO' });
         console.log('Found clans:', clans.items?.map((c) => c.name));
-    
+
         // Get locations
         const locations = await api.endpoints.getLocations();
         console.log('Locations:', locations.items?.map((l) => l.name));
       } catch (error) {
         console.error(error);
       }
-      
+
     }
-    
+
     main();
     ```
 
