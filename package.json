@@ -1,0 +1,48 @@
+{
+  "name": "@vladnet14/supercell-api",
+  "version": "1.0.4",
+  "description": "A JavaScript library for interacting with Supercell game APIs",
+  "main": "./src/index.js",
+  "types": "./typings/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./typings/index.d.mts",
+        "default": "./src/index.js"
+      },
+      "require": {
+        "types": "./typings/index.d.ts",
+        "default": "./src/index.js"
+      }
+    }
+  },
+  "files": [
+    "src",
+    "typings"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladnet14/supercell-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vladnet14/supercell-api/issues"
+  },
+  "homepage": "https://github.com/vladnet14/supercell-api#readme",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "supercell",
+    "api",
+    "brawl stars",
+    "clash of clans"
+  ],
+  "author": "Vladislav Borodatyi <vlad.borodaty228032qw@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "@types/node": "^16.11.12"
+  }
+}
