@@ -1,0 +1,30 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Фоновый круг -->
+    <circle cx="24" cy="24" r="22" fill="#2563eb" opacity="0.1"/>
+    <circle cx="24" cy="24" r="22" stroke="#2563eb" stroke-width="2"/>
+    
+    <!-- Символ кода/сообщества -->
+    <path 
+        d="M16 20L12 24L16 28M32 20L36 24L32 28" 
+        stroke="#2563eb" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+    />
+    
+    <!-- Текст CRUVO -->
+    <text 
+        x="24" 
+        y="15" 
+        font-family="Monaco, monospace" 
+        font-size="8" 
+        fill="#2563eb" 
+        text-anchor="middle" 
+        font-weight="bold"
+    >CRUVO</text>
+    
+    <!-- Точки, символизирующие сообщество -->
+    <circle cx="18" cy="32" r="1.5" fill="#2563eb"/>
+    <circle cx="24" cy="32" r="1.5" fill="#2563eb"/>
+    <circle cx="30" cy="32" r="1.5" fill="#2563eb"/>
+</svg>
