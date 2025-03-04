@@ -1,7 +1,7 @@
 # Зависимости
 /node_modules/
 
-*example*
+examples/
 
 # Логи
 *.log
