@@ -111,7 +111,7 @@ h2 {
 pre {
     background: var(--code-bg);
     border-radius: 8px;
-    padding: 40px 24px 24px; /* Увеличиваем верхний отступ для метки */
+    padding: 40px 24px 24px;
     margin: 16px 0;
     overflow-x: auto;
     position: relative;
@@ -120,8 +120,8 @@ pre {
 pre::before {
     content: attr(data-language);
     position: absolute;
-    top: 12px; /* Увеличиваем отступ сверху */
-    right: 12px; /* Увеличиваем отступ справа */
+    top: 12px;
+    right: 12px;
     background: rgba(255, 255, 255, 0.1);
     padding: 4px 8px;
     border-radius: 6px;
@@ -267,7 +267,7 @@ pre code {
     overflow-y: auto;
     display: none;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 999; /* Уменьшаем z-index, чтобы меню было поверх */
+    z-index: 999;
 }
 
 .method-icon,
@@ -364,12 +364,12 @@ pre code {
         margin-left: 0;
         width: 100%;
         padding: 16px;
-        padding-top: 0; /* Убираем верхний отступ у контента */
+        padding-top: 0;
     }
 
     .menu-toggle {
         display: block;
-        position: absolute; /* Меняем на absolute */
+        position: absolute;
         top: 16px;
         left: 16px;
         z-index: 1001;
@@ -414,7 +414,7 @@ pre code {
 
     /* Отступ для поискового поля, чтобы не перекрывалось кнопкой */
     .search-container {
-        margin: 64px 16px 16px; /* Увеличиваем верхний отступ */
+        margin: 64px 16px 16px;
     }
 }
 
