@@ -120,12 +120,12 @@ pre {
 pre::before {
     content: attr(data-language);
     position: absolute;
-    top: 6px;
-    right: 6px;
+    top: 12px; /* Увеличиваем отступ сверху */
+    right: 12px; /* Увеличиваем отступ справа */
     background: rgba(255, 255, 255, 0.1);
-    padding: 4px 6px;
+    padding: 4px 8px;
     border-radius: 6px;
-    font-size: 10px;
+    font-size: 12px;
     color: #d4d4d4;
     font-family: 'Fira Code', monospace;
     text-transform: lowercase;
@@ -267,7 +267,7 @@ pre code {
     overflow-y: auto;
     display: none;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+    z-index: 999; /* Уменьшаем z-index, чтобы меню было поверх */
 }
 
 .method-icon,
@@ -359,10 +359,15 @@ pre code {
         margin-left: 0;
         width: 100%;
         padding: 16px;
+        padding-top: 0; /* Убираем верхний отступ у контента */
     }
 
     .menu-toggle {
         display: block;
+        position: absolute; /* Меняем на absolute */
+        top: 16px;
+        left: 16px;
+        z-index: 1001;
     }
 
     .sidebar {
@@ -404,7 +409,7 @@ pre code {
 
     /* Отступ для поискового поля, чтобы не перекрывалось кнопкой */
     .search-container {
-        margin: 16px 48px;
+        margin: 64px 16px 16px; /* Увеличиваем верхний отступ */
     }
 }
 
