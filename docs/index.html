@@ -83,15 +83,34 @@
     <h2>Usage</h2>
     <pre data-language="javascript"><code class="language-javascript">import SupercellClient from '@vladnet14/supercell-api';
 
-const client = new SupercellClient({
-    token: 'your-token',
-    apiType: 'clashofclans',
-    useProxy: false
-});
+const TOKEN = 'your-token';
 
-// Get player information
-const player = await client.api.getPlayer('Y90PCRLGC');
-console.log(player.name, player.trophies);</code></pre>
+async function main() {
+  const api = new SupercellClient({ token: TOKEN, apiType: 'clashofclans', useProxy: true });
+
+  try {
+    // Get player
+    const player = await api.endpoints.getPlayer('Y90PCRLGC');
+    console.log(`Player: ${player.name}, Level: ${player.expLevel}`);
+
+    // Get clan
+    const clan = await api.endpoints.getClan('2J2GQPRCV');
+    console.log(`Clan: ${clan.name}, Level: ${clan.clanLevel}`);
+
+    // Search clan
+    const clans = await api.endpoints.searchClans({ name: 'CRUVO' });
+    console.log('Found clans:', clans.items?.map((c) => c.name));
+
+    // Get locations
+    const locations = await api.endpoints.getLocations();
+    console.log('Locations:', locations.items?.map((l) => l.name));
+  } catch (error) {
+    console.error(error);
+  }
+
+}
+
+main();</code></pre>
 </section>
 
         <section id="api-reference">
