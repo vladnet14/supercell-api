@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search');
     const searchResults = document.getElementById('search-results');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const sidebar = document.querySelector('.sidebar');
 
     // Получаем все методы и API при загрузке страницы
     const getAllItems = () => {
@@ -55,16 +57,20 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(filtered.slice(0, 6));
     });
 
+    // Скрываем результаты при потере фокуса
+    searchInput.addEventListener('blur', () => {
+        setTimeout(() => {
+            searchResults.style.display = 'none';
+        }, 200); // Небольшая задержка для возможности клика по результатам
+    });
+
     // Мобильное меню
-    const menuToggle = document.querySelector('.menu-toggle');
-    const sidebar = document.querySelector('.sidebar');
-    
-    // Создаем оверлей
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     document.body.appendChild(overlay);
 
     menuToggle.addEventListener('click', () => {
+        searchResults.style.display = 'none'; // Скрываем результаты при открытии меню
         menuToggle.classList.toggle('active');
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
