@@ -1,0 +1,424 @@
+:root {
+    --primary-color: #2563eb;
+    --sidebar-bg: #f8fafc;
+    --text-color: #1e293b;
+    --border-color: #e2e8f0;
+    --code-bg: #1e1e1e;
+    --code-text: #d4d4d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text-color);
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    background: var(--sidebar-bg);
+    height: 100vh;
+    position: fixed;
+    width: 300px;
+    min-width: 300px;
+    left: 0;
+    top: 0;
+    border-right: 1px solid var(--border-color);
+    padding: 32px;
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    margin-bottom: 32px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 8px 0;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.sub-nav {
+    list-style: none;
+    margin-left: 16px;
+}
+
+.content {
+    margin-left: 300px;
+    flex: 1;
+    padding: 32px 64px;
+    width: calc(100% - 300px);
+    max-width: 1200px;
+    margin-right: auto;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+    color: var(--text-color);
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 32px 0;
+}
+
+.feature-card {
+    padding: 32px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.feature-card img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+/* Стили для блоков кода */
+pre {
+    background: var(--code-bg);
+    border-radius: 8px;
+    padding: 24px;
+    margin: 16px 0;
+    overflow-x: auto;
+    position: relative;
+}
+
+pre::before {
+    content: attr(data-language);
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #d4d4d4;
+    font-family: 'Fira Code', monospace;
+    text-transform: lowercase;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    z-index: 1;
+}
+
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--code-text);
+    background: transparent;
+}
+
+pre code {
+    display: block;
+    padding: 0;
+}
+
+/* Стили подсветки синтаксиса */
+.hljs {
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Цвета для подсветки синтаксиса */
+.hljs-keyword { color: #569cd6; }
+.hljs-string { color: #ce9178; }
+.hljs-comment { color: #6a9955; }
+.hljs-function { color: #dcdcaa; }
+.hljs-variable { color: #9cdcfe; }
+.hljs-number { color: #b5cea8; }
+.hljs-operator { color: #d4d4d4; }
+
+.method-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 32px;
+    margin: 16px 0;
+    width: 100%;
+}
+
+.method-card h4 {
+    color: var(--primary-color);
+    font-size: 19px;
+    margin-bottom: 16px;
+}
+
+.method-card h5 {
+    margin: 16px 0 8px;
+}
+
+.method-card ul {
+    margin-left: 32px;
+}
+
+.search-result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.search-result-method {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-color);
+    font-family: 'Fira Code', monospace;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.search-result-section {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.search-result-item:hover {
+    background: var(--sidebar-bg);
+}
+
+.search-container {
+    margin: 16px 0;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    /* Отключаем стили автозаполнения */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* Отключаем желтый фон автозаполнения в Chrome */
+.search-container input:-webkit-autofill,
+.search-container input:-webkit-autofill:hover,
+.search-container input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: var(--text-color) !important;
+}
+
+/* Убираем крестик очистки в IE */
+.search-container input::-ms-clear {
+    display: none;
+}
+
+/* Убираем крестик очистки в Chrome */
+.search-container input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-top: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.method-icon,
+.api-icon {
+    color: var(--primary-color);
+    flex-shrink: 0;
+    display: inline-flex;
+    width: 26px;
+    height: 26px;
+    vertical-align: middle;
+}
+
+.search-result-item[data-type="api"] .search-result-method {
+    color: var(--text-color);
+}
+
+/* Мобильное меню */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1001;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-toggle .line {
+    transform-origin: center;
+    transition: all 0.3s ease;
+}
+
+/* Начальное положение линий */
+.menu-toggle .line-1,
+.menu-toggle .line-2,
+.menu-toggle .line-3 {
+    transform-origin: center center;
+}
+
+/* Анимация при активном состоянии */
+.menu-toggle.active .line-1 {
+    transform: translate(-20%, 5px) rotate(45deg);
+}
+
+.menu-toggle.active .line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.menu-toggle.active .line-3 {
+    transform: translate(-20%, -4px) rotate(-45deg);
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: -300px;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 300px;
+        background: white;
+        z-index: 1000;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: none;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Затемнение фона при открытом меню */
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .overlay.active {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Отступ для поискового поля, чтобы не перекрывалось кнопкой */
+    .search-container {
+        margin: 16px 48px;
+    }
+}
+
+/* Контейнер для центрирования на больших экранах */
+@media (min-width: 1500px) {
+    .content {
+        margin-left: calc((100% - 900px) / 2);
+    }
+}
+
+/* Адаптив для средних экранов */
+@media (max-width: 1200px) {
+    .content {
+        max-width: 100%;
+        padding: 32px;
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supercell API Client Documentation</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
+</head>
+<body>
+    <button class="menu-toggle" aria-label="Toggle menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="4" y1="6" x2="20" y2="6" class="line line-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4" y1="12" x2="20" y2="12" class="line line-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4" y1="18" x2="20" y2="18" class="line line-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </button>
+
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <img src="./assets/logo.svg" alt="Supercell API Logo" class="logo">
+            <h1>Supercell API</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#getting-started" class="active">Getting Started</a></li>
+            <li><a href="#installation">Installation</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li>
+                <a href="#api-reference">API Reference</a>
+                <ul class="sub-nav">
+                    <li><a href="#clash-of-clans">Clash of Clans</a></li>
+                    <li><a href="#clash-royale">Clash Royale</a></li>
+                    <li><a href="#brawl-stars">Brawl Stars</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <div class="search-container">
+            <input 
+                type="search" 
+                id="search" 
+                placeholder="Search documentation..." 
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Search documentation"
+            >
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <section id="getting-started">
+            <h2>Getting Started</h2>
+            <p>Supercell API Client is a powerful JavaScript library for interacting with various Supercell game APIs.</p>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <img src="assets/rocket.svg" alt="Easy to Use">
+                    <h3>Easy to Use</h3>
+                    <p>Simple and intuitive API for accessing game data</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/async.svg" alt="Async">
+                    <h3>Async Support</h3>
+                    <p>Built with modern async/await patterns</p>
+                </div>
+                <div class="feature-card">
+                    <img src="assets/secure.svg" alt="Secure">
+                    <h3>Secure</h3>
+                    <p>Built-in token handling and security features</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation">
+            <h2>Installation</h2>
+            <pre data-language="bash"><code class="language-bash">npm install @vladnet14/supercell-api</code></pre>
+        </section>
+
+        <section id="usage">
+    <h2>Usage</h2>
+    <pre data-language="javascript"><code class="language-javascript">import SupercellClient from '@vladnet14/supercell-api';
+
+const client = new SupercellClient({
+    token: 'your-token',
+    apiType: 'clashofclans',
+    useProxy: false
+});
+
+// Get player information
+const player = await client.api.getPlayer('Y90PCRLGC');
+console.log(player.name, player.trophies);</code></pre>
+</section>
+
+        <section id="api-reference">
+            <h2>API Reference</h2>
+            
+            <h3 id="clash-of-clans">Clash of Clans API</h3>
+            <div class="method-card">
+                <h4>getPlayer(tag)</h4>
+                <p>Fetches player information by tag</p>
+                <h5>Parameters:</h5>
+                <ul>
+                    <li>tag (string) - Player tag with or without '#'</li>
+                </ul>
+                <h5>Returns:</h5>
+                <p>Promise&lt;PlayerData&gt;</p>
+            </div>
+
+            <div class="method-card">
+                <h4>getClan(tag)</h4>
+                <p>Fetches clan information by tag</p>
+                <h5>Parameters:</h5>
+                <ul>
+                    <li>tag (string) - Clan tag with or without '#'</li>
+                </ul>
+                <h5>Returns:</h5>
+                <p>Promise&lt;ClanData&gt;</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/bash.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</body>
+</html>
