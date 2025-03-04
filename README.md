@@ -57,6 +57,17 @@
 - **Community Support** 👫  
   An active community of developers ready to help with any questions and improve the library based on user feedback.
 
+## Documentation
+
+Visit our [documentation website](https://docs.cruvo-project.ru/) for detailed information:
+
+- 📚 Complete API methods reference
+- 🎮 Examples for each Supercell API
+- 🔧 Setup and configuration guide
+- 🚀 Interactive code examples
+
+The documentation provides comprehensive guides and examples to help you get started quickly with the Supercell API Client.
+
 ## Installation
 
 Install the library using npm:
