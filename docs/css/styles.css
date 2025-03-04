@@ -111,7 +111,7 @@ h2 {
 pre {
     background: var(--code-bg);
     border-radius: 8px;
-    padding: 24px;
+    padding: 40px 24px 24px; /* Увеличиваем верхний отступ для метки */
     margin: 16px 0;
     overflow-x: auto;
     position: relative;
@@ -120,12 +120,12 @@ pre {
 pre::before {
     content: attr(data-language);
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 6px;
+    right: 6px;
     background: rgba(255, 255, 255, 0.1);
-    padding: 4px 12px;
+    padding: 4px 6px;
     border-radius: 6px;
-    font-size: 13px;
+    font-size: 10px;
     color: #d4d4d4;
     font-family: 'Fira Code', monospace;
     text-transform: lowercase;
