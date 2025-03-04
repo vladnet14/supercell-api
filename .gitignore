@@ -1,6 +1,8 @@
 # Зависимости
 /node_modules/
 
+*example*
+
 # Логи
 *.log
 npm-debug.log*

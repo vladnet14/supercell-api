@@ -1,27 +1,25 @@
 /**
- * @typedef {Object} SupercellAPIConfig
- * @property {string} token - The API token
- * @property {boolean} [useProxy=false] - Whether to use proxy (true) or not (false)
- * @property {'clashofclans' | 'clashroyale' | 'brawlstars'} apiType - API type
+ * @typedef {Object} APIConfig
+ * @property {string} token - API authentication token
+ * @property {boolean} [useProxy=false] - Whether to use proxy for requests
+ * @property {'clashofclans' | 'clashroyale' | 'brawlstars'} apiType - Type of Supercell API
  */
 
 /**
- * Represents the Supercell API client configuration
+ * @typedef {Object} APIHeaders
+ * @property {string} Authorization - Bearer token for authentication
+ * @property {string} Accept - Accept header for API requests
+ */
+
+/**
+ * @class SupercellAPI
+ * @description Base class that handles core functionality for Supercell game APIs
  */
 class SupercellAPI {
-  /** @type {string} */
-  token;
-  /** @type {boolean} */
-  useProxy;
-  /** @type {'clashofclans' | 'clashroyale' | 'brawlstars'} */
-  apiType;
-  /** @type {{ Authorization: string, Accept: string }} */
-  headers;
-  /** @type {string} */
-  baseUrl;
-
   /**
-   * @param {SupercellAPIConfig} config - Configuration object
+   * Creates an instance of SupercellAPI
+   * @param {APIConfig} config - Configuration object for the API
+   * @throws {Error} When token or apiType is missing
    */
   constructor({ token, useProxy = false, apiType }) {
     if (!token) {
@@ -31,30 +29,32 @@ class SupercellAPI {
       throw new Error('API type is required');
     }
 
+    /** @type {string} */
     this.token = token;
+
+    /** @type {boolean} */
     this.useProxy = useProxy;
 
-    const lowerApiType = apiType.toLowerCase();
-    if (lowerApiType !== 'clashofclans' && lowerApiType !== 'clashroyale' && lowerApiType !== 'brawlstars') {
-      throw new Error(
-        `Unsupported API type: ${apiType}. Supported types: clashofclans, clashroyale, brawlstars`
-      );
-    }
-    this.apiType = lowerApiType;
+    /** @type {'clashofclans' | 'clashroyale' | 'brawlstars'} */
+    this.apiType = apiType;
 
+    /** @type {APIHeaders} */
     this.headers = {
       Authorization: `Bearer ${this.token}`,
       Accept: 'application/json',
     };
+
+    /** @type {string} */
     this.baseUrl = this.getBaseUrl();
   }
 
   /**
-   * Determines the base URL based on apiType and proxy
-   * @returns {string} The base URL
+   * Gets the appropriate base URL for API requests
+   * @private
+   * @returns {string} The base URL for API requests
    */
   getBaseUrl() {
-    /** @type {{ [key in 'clashofclans' | 'clashroyale' | 'brawlstars']: string }} */
+    /** @type {Record<string, string>} */
     const apiMap = {
       clashofclans: 'https://api.clashofclans.com/v1',
       clashroyale: 'https://api.clashroyale.com/v1',
@@ -62,7 +62,7 @@ class SupercellAPI {
     };
 
     if (this.useProxy) {
-      /** @type {{ [key in 'clashofclans' | 'clashroyale' | 'brawlstars']: string }} */
+      /** @type {Record<string, string>} */
       const proxyMap = {
         clashofclans: 'https://cocproxy.royaleapi.dev/v1',
         clashroyale: 'https://proxy.royaleapi.dev/v1',
