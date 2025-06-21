@@ -476,7 +476,7 @@ pre code {
         padding-top: 60px;
     }
 
-    main .content {
+    main.content {
         padding: 16px;
         padding-top: 60px;
         padding-bottom: 80px;
