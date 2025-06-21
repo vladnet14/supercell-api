@@ -26,12 +26,11 @@ body {
 }
 
 main.content {
-    flex-grow: 1; /* Контент занимает все пространство до футера */
-    margin-left: 300px;
+    flex-grow: 1;
+    width: 100%;
     padding: 32px 64px;
-    width: calc(100% - 300px);
     max-width: 1200px;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .sidebar {
@@ -45,10 +44,18 @@ main.content {
     border-right: 1px solid var(--border-color);
     padding: 32px;
     overflow-y: auto;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar-header {
-    margin-bottom: 32px;
+    margin: 32px 0;
 }
 
 .logo {
@@ -75,15 +82,6 @@ main.content {
 .sub-nav {
     list-style: none;
     margin-left: 16px;
-}
-
-.content {
-    margin-left: 300px;
-    flex: 1;
-    padding: 32px 64px;
-    width: calc(100% - 300px);
-    max-width: 1200px;
-    margin-right: auto;
 }
 
 section {
@@ -117,7 +115,6 @@ h2 {
     margin-bottom: 1rem;
 }
 
-/* Стили для блоков кода */
 pre {
     background: var(--code-bg);
     border-radius: 8px;
@@ -156,13 +153,11 @@ pre code {
     padding: 0;
 }
 
-/* Стили подсветки синтаксиса */
 .hljs {
     background: transparent !important;
     padding: 0 !important;
 }
 
-/* Цвета для подсветки синтаксиса */
 .hljs-keyword { color: #569cd6; }
 .hljs-string { color: #ce9178; }
 .hljs-comment { color: #6a9955; }
@@ -235,7 +230,6 @@ pre code {
     border-radius: 6px;
     font-size: 14px;
     background: white;
-    /* Отключаем стили автозаполнения */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -246,7 +240,6 @@ pre code {
     border-color: var(--primary-color);
 }
 
-/* Отключаем желтый фон автозаполнения в Chrome */
 .search-container input:-webkit-autofill,
 .search-container input:-webkit-autofill:hover,
 .search-container input:-webkit-autofill:focus {
@@ -254,12 +247,10 @@ pre code {
     -webkit-text-fill-color: var(--text-color) !important;
 }
 
-/* Убираем крестик очистки в IE */
 .search-container input::-ms-clear {
     display: none;
 }
 
-/* Убираем крестик очистки в Chrome */
 .search-container input::-webkit-search-cancel-button {
     display: none;
 }
@@ -294,13 +285,12 @@ pre code {
     color: var(--text-color);
 }
 
-/* Мобильное меню */
 .menu-toggle {
-    display: none;
+    display: flex;
     position: fixed;
     top: 16px;
     left: 16px;
-    z-index: 1001;
+    z-index: 1002;
     background: white;
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -323,14 +313,12 @@ pre code {
     transition: all 0.3s ease;
 }
 
-/* Начальное положение линий */
 .menu-toggle .line-1,
 .menu-toggle .line-2,
 .menu-toggle .line-3 {
     transform-origin: center center;
 }
 
-/* Анимация при активном состоянии */
 .menu-toggle.active .line-1 {
     transform: translate(-20%, 5px) rotate(45deg);
 }
@@ -344,153 +332,28 @@ pre code {
     transform: translate(-20%, -4px) rotate(-45deg);
 }
 
-
-
-@media (max-width: 768px) {
-    body {
-        grid-template-columns: 1fr;
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 300px;
-        background: white;
-        z-index: 1000;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        box-shadow: none;
-        padding-top: 64px;
-    }
-
-    .sidebar.active {
-        left: 0;
-        transform: translateX(0);
-    }
-
-    .content {
-        margin-left: 0;
-        width: 100%;
-        padding: 16px;
-        padding-top: 0;
-    }
-
-    .menu-toggle {
-        display: block;
-        position: absolute;
-        top: 16px;
-        left: 16px;
-        z-index: 1001;
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 300px;
-        background: white;
-        z-index: 1000;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        box-shadow: none;
-    }
-
-    .sidebar.active {
-        transform: translateX(0);
-        box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Затемнение фона при открытом меню */
-    .overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-
-    .overlay.active {
-        display: block;
-        opacity: 1;
-    }
-
-    /* Отступ для поискового поля, чтобы не перекрывалось кнопкой */
-    .search-container {
-        margin: 64px 16px 16px;
-    }
-}
-
-/* Контейнер для центрирования на больших экранах */
-@media (min-width: 1500px) {
-    .content {
-        margin-left: calc((100% - 900px) / 2);
-    }
-}
-
-/* Адаптив для средних экранов */
-@media (max-width: 1200px) {
-    .content {
-        max-width: 100%;
-        padding: 32px;
-    }
-}
-
-/* Футер */
 .site-footer {
     background-color: var(--sidebar-bg);
     border-top: 1px solid var(--border-color);
-    padding: 40px 0;
-    margin-top: 0; /* Убираем margin-top, так как футер теперь прижат к низу */
+    padding: 24px 0;
     width: 100%;
-    flex-shrink: 0; /* Футер не сжимается */
+    flex-shrink: 0;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 32px;
-}
-
-.footer-widgets {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-bottom: 32px;
-}
-
-.discord-widget {
-    background: #2c2f33;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.2s;
-}
-
-.discord-widget:hover {
-    transform: translateY(-4px);
-}
-
-.discord-widget iframe {
-    border: none;
-    width: 100%;
-    min-height: 400px;
-}
-
-.footer-links, .footer-info {
     padding: 0 16px;
 }
 
+.footer-links, .footer-info {
+    padding: 0 8px;
+    margin-bottom: 16px;
+}
+
 .footer-links h3, .footer-info h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 12px;
     color: var(--text-color);
     font-weight: 600;
 }
@@ -500,7 +363,7 @@ pre code {
 }
 
 .footer-links li {
-    margin-bottom: 12px;
+    margin-bottom: 8px;
 }
 
 .footer-links a {
@@ -509,8 +372,8 @@ pre code {
     transition: color 0.2s;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 15px;
+    gap: 6px;
+    font-size: 13px;
 }
 
 .footer-links a:hover {
@@ -520,7 +383,7 @@ pre code {
 .footer-links a::before {
     content: "→";
     color: var(--primary-color);
-    font-size: 14px;
+    font-size: 11px;
     transition: transform 0.2s;
 }
 
@@ -530,32 +393,32 @@ pre code {
 
 .footer-info p {
     color: #475569;
-    margin-bottom: 16px;
-    line-height: 1.6;
-    font-size: 15px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-size: 13px;
 }
 
 .copyright {
-    font-size: 14px;
+    font-size: 12px;
     color: #64748b;
     text-align: center;
-    padding-top: 24px;
+    padding-top: 16px;
     border-top: 1px solid var(--border-color);
 }
 
 .social-links {
     display: flex;
-    gap: 12px;
-    margin-top: 16px;
-    justify-content: left;
+    gap: 8px;
+    margin-top: 10px;
+    justify-content: flex-start;
 }
 
 .social-links a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background-color: var(--border-color);
     color: var(--text-color);
@@ -569,33 +432,126 @@ pre code {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивные стили для футера */
-@media (max-width: 768px) {
-    .site-footer {
-        padding: 32px 16px;
-    }
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
 
-    .footer-widgets {
-        grid-template-columns: 1fr;
-        gap: 24px;
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    main.content {
+        padding: 24px;
     }
 
     .footer-links, .footer-info {
         padding: 0;
-        margin-top: 24px;
+        margin-top: 12px;
     }
 
-    .discord-widget {
-        order: -1;
+    .site-footer {
+        padding: 20px 12px;
     }
 
-    .social-links {
-        justify-content: flex-start;
+    .footer-container {
+        padding: 0 12px;
     }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+    .sidebar {
+        width: 260px;
+        padding: 16px;
+        padding-top: 60px;
+    }
+
+    main.content {
+        padding: 16px;
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
+
+    .menu-toggle {
+        top: 12px;
+        left: 12px;
+    }
+
+    .search-container {
+        margin: 60px 12px 12px;
+    }
+
+    .footer-links h3, .footer-info h3 {
+        font-size: 14px;
+    }
+
+    .footer-links a {
+        font-size: 12px;
+    }
+
+    .footer-info p {
+        font-size: 12px;
+    }
+
+    .social-links {
+        gap: 6px;
+    }
+
+    .social-links a {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-links svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 240px;
+        padding: 12px;
+        padding-top: 56px;
+    }
+
+    main.content {
+        padding: 12px;
+        padding-top: 56px;
+        padding-bottom: 100px;
+    }
+
     .footer-container {
-        padding: 0 24px;
+        padding: 0 8px;
+    }
+
+    .footer-links, .footer-info {
+        margin-top: 10px;
+    }
+
+    .copyright {
+        font-size: 11px;
+        padding-top: 12px;
+    }
+
+    .search-container {
+        margin: 56px 8px 8px;
+    }
+
+    .menu-toggle {
+        top: 8px;
+        left: 8px;
+        width: 36px;
+        height: 36px;
     }
 }
