@@ -547,7 +547,7 @@ pre code {
     display: flex;
     gap: 12px;
     margin-top: 16px;
-    justify-content: center;
+    justify-content: left;
 }
 
 .social-links a {
