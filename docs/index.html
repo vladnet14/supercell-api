@@ -1,97 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Supercell API Documentation</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap">
-    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg">
-    <meta name="description" content="Supercell API Client is a powerful JavaScript library for interacting with various Supercell game APIs.">
-</head>
-<body>
-    <iframe src="https://discord.com/widget?id=1214562935196618763&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
+    />
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <meta
+      name="description"
+      content="Supercell API Client is a powerful JavaScript library for interacting with various Supercell game APIs."
+    />
+  </head>
+  <body>
     <button class="menu-toggle" aria-label="Toggle menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="4" y1="6" x2="20" y2="6" class="line line-1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <line x1="4" y1="12" x2="20" y2="12" class="line line-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <line x1="4" y1="18" x2="20" y2="18" class="line line-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <line
+          x1="4"
+          y1="6"
+          x2="20"
+          y2="6"
+          class="line line-1"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          x1="4"
+          y1="12"
+          x2="20"
+          y2="12"
+          class="line line-2"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+        <line
+          x1="4"
+          y1="18"
+          x2="20"
+          y2="18"
+          class="line line-3"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
     </button>
 
     <nav class="sidebar">
-        <div class="sidebar-header">
-            <img src="./assets/logo.svg" alt="Supercell API Logo" class="logo">
-            <h1>Supercell API</h1>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#getting-started" class="active">Getting Started</a></li>
-            <li><a href="#installation">Installation</a></li>
-            <li><a href="#usage">Usage</a></li>
-            <li>
-                <a href="#api-reference">API Reference</a>
-                <ul class="sub-nav">
-                    <li><a href="#clash-of-clans">Clash of Clans</a></li>
-                    <li><a href="#clash-royale">Clash Royale</a></li>
-                    <li><a href="#brawl-stars">Brawl Stars</a></li>
-                </ul>
-            </li>
-        </ul>
+      <div class="sidebar-header">
+        <img src="./assets/logo.svg" alt="Supercell API Logo" class="logo" />
+        <h1>Supercell API</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#getting-started" class="active">Getting Started</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li>
+          <a href="#api-reference">API Reference</a>
+          <ul class="sub-nav">
+            <li><a href="#clash-of-clans">Clash of Clans</a></li>
+            <li><a href="#clash-royale">Clash Royale</a></li>
+            <li><a href="#brawl-stars">Brawl Stars</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
 
     <main class="content">
-        <div class="search-container">
-            <input 
-                type="search" 
-                id="search" 
-                placeholder="Search documentation..." 
-                autocomplete="off"
-                spellcheck="false"
-                aria-label="Search documentation"
-            >
-            <div id="search-results" class="search-results"></div>
-        </div>
-        <section id="getting-started">
-            <h2>Getting Started</h2>
-            <p>Supercell API Client is a powerful JavaScript library for interacting with various Supercell game APIs.</p>
-            
-            <div class="features">
-                <div class="feature-group">
-                    <div class="feature-card">
-                        <img src="assets/rocket.svg" alt="Easy to Use">
-                        <h3>Easy to Use</h3>
-                        <p>Simple and intuitive API for accessing game data</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="assets/async.svg" alt="Async">
-                        <h3>Async Support</h3>
-                        <p>Built with modern async/await patterns</p>
-                    </div>
-                </div>
-                <div class="feature-group">
-                    <div class="feature-card">
-                        <img src="assets/secure.svg" alt="Secure">
-                        <h3>Secure</h3>
-                        <p>Built-in token handling and security features</p>
-                    </div>
-                    <div class="feature-card">
-                        <img src="assets/cruvo.svg" alt="Community">
-                        <h3>IT Community</h3>
-                        <p>Part of CRUVO-Project Development Community</p>
-                    </div>
-                </div>
+      <div class="search-container">
+        <input
+          type="search"
+          id="search"
+          placeholder="Search documentation..."
+          autocomplete="off"
+          spellcheck="false"
+          aria-label="Search documentation"
+        />
+        <div id="search-results" class="search-results"></div>
+      </div>
+      <section id="getting-started">
+        <h2>Getting Started</h2>
+        <p>
+          Supercell API Client is a powerful JavaScript library for interacting
+          with various Supercell game APIs.
+        </p>
+
+        <div class="features">
+          <div class="feature-group">
+            <div class="feature-card">
+              <img src="assets/rocket.svg" alt="Easy to Use" />
+              <h3>Easy to Use</h3>
+              <p>Simple and intuitive API for accessing game data</p>
             </div>
-        </section>
+            <div class="feature-card">
+              <img src="assets/async.svg" alt="Async" />
+              <h3>Async Support</h3>
+              <p>Built with modern async/await patterns</p>
+            </div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-card">
+              <img src="assets/secure.svg" alt="Secure" />
+              <h3>Secure</h3>
+              <p>Built-in token handling and security features</p>
+            </div>
+            <div class="feature-card">
+              <img src="assets/cruvo.svg" alt="Community" />
+              <h3>IT Community</h3>
+              <p>Part of CRUVO-Project Development Community</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="installation">
-            <h2>Installation</h2>
-            <pre data-language="bash"><code class="language-bash">npm install @vladnet14/supercell-api</code></pre>
-        </section>
+      <section id="installation">
+        <h2>Installation</h2>
+        <pre
+          data-language="bash"
+        ><code class="language-bash">npm install @vladnet14/supercell-api</code></pre>
+      </section>
 
-        <section id="usage">
-    <h2>Usage</h2>
-    <pre data-language="javascript"><code class="language-javascript">import SupercellClient from '@vladnet14/supercell-api';
+      <section id="usage">
+        <h2>Usage</h2>
+        <pre
+          data-language="javascript"
+        ><code class="language-javascript">import SupercellClient from '@vladnet14/supercell-api';
 
 const TOKEN = 'your-token';
 
@@ -121,41 +169,142 @@ async function main() {
 }
 
 main();</code></pre>
-</section>
+      </section>
 
-        <section id="api-reference">
-            <h2>API Reference</h2>
-            
-            <h3 id="clash-of-clans">Clash of Clans API</h3>
-            <div class="method-card">
-                <h4>getPlayer(tag)</h4>
-                <p>Fetches player information by tag</p>
-                <h5>Parameters:</h5>
-                <ul>
-                    <li>tag (string) - Player tag with or without '#'</li>
-                </ul>
-                <h5>Returns:</h5>
-                <p>Promise&lt;PlayerData&gt;</p>
-            </div>
+      <section id="api-reference">
+        <h2>API Reference</h2>
 
-            <div class="method-card">
-                <h4>getClan(tag)</h4>
-                <p>Fetches clan information by tag</p>
-                <h5>Parameters:</h5>
-                <ul>
-                    <li>tag (string) - Clan tag with or without '#'</li>
-                </ul>
-                <h5>Returns:</h5>
-                <p>Promise&lt;ClanData&gt;</p>
-            </div>
-        </section>
+        <h3 id="clash-of-clans">Clash of Clans API</h3>
+        <div class="method-card">
+          <h4>getPlayer(tag)</h4>
+          <p>Fetches player information by tag</p>
+          <h5>Parameters:</h5>
+          <ul>
+            <li>tag (string) - Player tag with or without '#'</li>
+          </ul>
+          <h5>Returns:</h5>
+          <p>Promise&lt;PlayerData&gt;</p>
+        </div>
+
+        <div class="method-card">
+          <h4>getClan(tag)</h4>
+          <p>Fetches clan information by tag</p>
+          <h5>Parameters:</h5>
+          <ul>
+            <li>tag (string) - Clan tag with or without '#'</li>
+          </ul>
+          <h5>Returns:</h5>
+          <p>Promise&lt;ClanData&gt;</p>
+        </div>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-widgets">
+          <div class="discord-widget">
+            <iframe
+              src="https://discord.com/widget?id=1214562935196618763&theme=dark"
+              width="350"
+              height="400"
+              allowtransparency="true"
+              frameborder="0"
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+              title="CRUVO IT Community Discord"
+            ></iframe>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="https://cruvo-project.ru">Home</a></li>
+              <li>
+                <a href="https://vk.com/cruvo_it_community" target="_blank"
+                  >VKontakte</a
+                >
+              </li>
+              <li>
+                <a href="https://github.com/CRUVO-Project" target="_blank"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a href="https://t.me/+qT5hn9vO7QplYjI6" target="_blank"
+                  >Telegram</a
+                >
+              </li>
+              <li><a href="/">Documentation</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-info">
+            <h3>CRUVO IT Community</h3>
+            <p>
+              Сообщество разработчиков и ИТ-специалистов, увлеченных созданием
+              инновационных решений.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://github.com/CRUVO-Project"
+                target="_blank"
+                aria-label="GitHub"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.957-.266 1.98-.398 3-.405 1.02.007 2.043.139 3 .405 2.295-1.552 3.3-1.23 3.3-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.93.42.36.81 1.096.81 2.22v3.285c0 .318.21.694.825.576C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://t.me/+qT5hn9vO7QplYjI6"
+                target="_blank"
+                aria-label="Telegram"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12.013 12.013 0 0 0-.056 0zm4.837 8.473a1.2 1.2 0 0 0-.973-.473c-.573 0-.853.293-1.267.88l-2.677 3.667-1.093-.453-.613.827.933.533 1.133-.267 3.267-4.533c.413-.587.533-.733.573-.733.053 0 .107.067.147.213l.973 4.533.827-.533-.613-.827-1.093.453-1.267-2.667 2.677-3.667c.413-.587.693-.88 1.267-.88.573 0 .973.293.973.947 0 .333-.133.667-.467.947l-.707.48z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://vk.com/cruvo_it_community"
+                target="_blank"
+                aria-label="VKontakte"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M21.579 6.33c.135-.432 0-.747-.648-.747h-2.151c-.541 0-.793.279-.929.732 0 0-1.092 2.606-2.631 4.297-.501.549-.732.726-.998.726-.135 0-.378-.177-.378-.702V7.077c0-.627-.189-.747-.756-.747h-3.375c-.378 0-.608.147-.608.549 0 .576.864.711.864 2.322v3.177c0 .783-.135.924-.648.924-.999 0-2.808-2.637-3.987-5.652-.243-.621-.459-.855-1.026-.855H2.16c-.621 0-.756.279-.756.732 0 .684 1.053 4.071 4.89 6.795C8.748 16.23 11.304 17.1 13.5 17.1c1.215 0 1.35-.297 1.35-.924v-2.106c0-.648.162-.783.702-.783.405 0 1.107.279 1.836 1.134 1.053 1.215 1.215 1.755 1.755 1.755h2.151c.621 0 .891-.297.756-.924-.162-.648-.783-1.584-2.025-2.808-.648-.648-1.566-1.215-.648-2.43 1.755-2.295 2.835-4.071 3.006-4.41z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <p class="copyright">© 2025 CRUVO Project. All rights reserved.</p>
+      </div>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/bash.min.js"></script>
     <script src="./js/main.js"></script>
     <script>
-        hljs.highlightAll();
+      hljs.highlightAll();
     </script>
-</body>
+  </body>
 </html>
