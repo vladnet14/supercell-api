@@ -25,7 +25,7 @@ body {
     flex-direction: column;
 }
 
-main .content {
+main.content {
     flex-grow: 1;
     width: 100%;
     padding: 32px 64px;
@@ -476,7 +476,7 @@ pre code {
         padding-top: 60px;
     }
 
-    main.content {
+    main .content {
         padding: 16px;
         padding-top: 60px;
         padding-bottom: 80px;
