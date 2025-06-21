@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Supercell API Documentation</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="/css/styles.css?v=1" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css"
@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"
     />
-    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
     <meta
       name="description"
       content="Supercell API Client is a powerful JavaScript library for interacting with various Supercell game APIs."
@@ -60,10 +60,10 @@
         />
       </svg>
     </button>
+    <div class="overlay"></div>
 
     <nav class="sidebar">
       <div class="sidebar-header">
-        <img src="./assets/logo.svg" alt="Supercell API Logo" class="logo" />
         <h1>Supercell API</h1>
       </div>
       <ul class="nav-links">
@@ -103,24 +103,24 @@
         <div class="features">
           <div class="feature-group">
             <div class="feature-card">
-              <img src="assets/rocket.svg" alt="Easy to Use" />
+              <img src="/assets/rocket.svg" alt="Easy to Use" />
               <h3>Easy to Use</h3>
               <p>Simple and intuitive API for accessing game data</p>
             </div>
             <div class="feature-card">
-              <img src="assets/async.svg" alt="Async" />
+              <img src="/assets/async.svg" alt="Async" />
               <h3>Async Support</h3>
               <p>Built with modern async/await patterns</p>
             </div>
           </div>
           <div class="feature-group">
             <div class="feature-card">
-              <img src="assets/secure.svg" alt="Secure" />
+              <img src="/assets/secure.svg" alt="Secure" />
               <h3>Secure</h3>
               <p>Built-in token handling and security features</p>
             </div>
             <div class="feature-card">
-              <img src="assets/cruvo.svg" alt="Community" />
+              <img src="/assets/cruvo.svg" alt="Community" />
               <h3>IT Community</h3>
               <p>Part of CRUVO-Project Development Community</p>
             </div>
@@ -183,7 +183,7 @@ main();</code></pre>
             <li>tag (string) - Player tag with or without '#'</li>
           </ul>
           <h5>Returns:</h5>
-          <p>Promise&lt;PlayerData&gt;</p>
+          <p>Promise<PlayerData></p>
         </div>
 
         <div class="method-card">
@@ -194,95 +194,99 @@ main();</code></pre>
             <li>tag (string) - Clan tag with or without '#'</li>
           </ul>
           <h5>Returns:</h5>
-          <p>Promise&lt;ClanData&gt;</p>
+          <p>Promise<ClanData></p>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-container">
-        <div class="footer-widgets">
-          <div class="discord-widget">
-            <iframe
-              src="https://discord.com/widget?id=1214562935196618763&theme=dark"
-              width="350"
-              height="400"
-              allowtransparency="true"
-              frameborder="0"
-              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
-              title="CRUVO IT Community Discord"
-            ></iframe>
-          </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="https://cruvo-project.ru">Home</a></li>
+            <li><a href="/">Documentation</a></li>
+          </ul>
+        </div>
 
-          <div class="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="https://cruvo-project.ru">Home</a></li>
-              <li><a href="/">Documentation</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-info">
-            <h3>CRUVO IT Community</h3>
-            <p>
-              Сообщество разработчиков и ИТ-специалистов, увлеченных созданием
-              инновационных решений.
-            </p>
-            <div class="social-links">
-              <a
-                href="https://github.com/CRUVO-Project"
-                target="_blank"
-                aria-label="GitHub"
+        <div class="footer-info">
+          <h3>CRUVO IT Community</h3>
+          <p>
+            A community of developers and IT professionals who are passionate
+            about creating innovative solutions.
+          </p>
+          <div class="social-links">
+            <a
+              href="https://github.com/CRUVO-Project"
+              target="_blank"
+              aria-label="GitHub"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
               >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.957-.266 1.98-.398 3-.405 1.02.007 2.043.139 3 .405 2.295-1.552 3.3-1.23 3.3-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.93.42.36.81 1.096.81 2.22v3.285c0 .318.21.694.825.576C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://t.me/+qT5hn9vO7QplYjI6"
+              target="_blank"
+              aria-label="Telegram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-telegram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://vk.com/cruvo_it_community"
+              target="_blank"
+              aria-label="VKontakte"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 16 16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.633 3.73c.111-.391 0-.678-.53-.678h-1.75c-.445 0-.65.248-.761.521 0 0-.89 2.283-2.152 3.767-.407.429-.593.566-.816.566-.11 0-.278-.137-.278-.527v-3.65c0-.468-.123-.677-.494-.677h-2.75a.432.432 0 00-.446.423c0 .444.63.547.695 1.796v2.713c0 .594-.102.702-.324.702-.594 0-2.037-2.293-2.893-4.918-.168-.51-.336-.716-.783-.716H.6c-.5 0-.6.248-.6.521 0 .488.593 2.908 2.763 6.108 1.447 2.186 3.484 3.371 5.339 3.371 1.113 0 1.25-.263 1.25-.716v-1.652c0-.527.106-.632.458-.632.26 0 .705.137 1.743 1.19 1.187 1.25 1.383 1.81 2.05 1.81h1.75c.5 0 .75-.263.607-.782-.158-.518-.725-1.269-1.477-2.16-.408-.507-1.02-1.053-1.205-1.326-.26-.352-.186-.508 0-.82 0 0 2.132-3.161 2.355-4.235z"
                   fill="currentColor"
-                >
-                  <path
-                    d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.11.82-.26.82-.577v-2.165c-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.087-.744.083-.729.083-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.807 1.305 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.957-.266 1.98-.398 3-.405 1.02.007 2.043.139 3 .405 2.295-1.552 3.3-1.23 3.3-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.93.42.36.81 1.096.81 2.22v3.285c0 .318.21.694.825.576C20.565 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://t.me/+qT5hn9vO7QplYjI6"
-                target="_blank"
-                aria-label="Telegram"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://discord.gg/v6cymA2GNu"
+              target="_blank"
+              aria-label="Discord"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                class="bi bi-discord"
+                viewBox="0 0 16 16"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  class="bi bi-telegram"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
-                  />
-                </svg>
-              </a>
-              <a
-                href="https://vk.com/cruvo_it_community"
-                target="_blank"
-                aria-label="VKontakte"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 16 16"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M15.633 3.73c.111-.391 0-.678-.53-.678h-1.75c-.445 0-.65.248-.761.521 0 0-.89 2.283-2.152 3.767-.407.429-.593.566-.816.566-.11 0-.278-.137-.278-.527v-3.65c0-.468-.123-.677-.494-.677h-2.75a.432.432 0 00-.446.423c0 .444.63.547.695 1.796v2.713c0 .594-.102.702-.324.702-.594 0-2.037-2.293-2.893-4.918-.168-.51-.336-.716-.783-.716H.6c-.5 0-.6.248-.6.521 0 .488.593 2.908 2.763 6.108 1.447 2.186 3.484 3.371 5.339 3.371 1.113 0 1.25-.263 1.25-.716v-1.652c0-.527.106-.632.458-.632.26 0 .705.137 1.743 1.19 1.187 1.25 1.383 1.81 2.05 1.81h1.75c.5 0 .75-.263.607-.782-.158-.518-.725-1.269-1.477-2.16-.408-.507-1.02-1.053-1.205-1.326-.26-.352-.186-.508 0-.82 0 0 2.132-3.161 2.355-4.235z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </a>
-            </div>
+                <path
+                  d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                />
+              </svg>
+            </a>
           </div>
         </div>
         <p class="copyright">© 2025 CRUVO Project. All rights reserved.</p>
@@ -292,7 +296,7 @@ main();</code></pre>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/bash.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="/js/main.js"></script>
     <script>
       hljs.highlightAll();
     </script>
